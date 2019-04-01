@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ultrasound3DviewerClass</class>
+ <widget class="QMainWindow" name="ultrasound3DviewerClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1600</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>85</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>ultrasound3Dviewer</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <item>
+     <widget class="QVTKWidget" name="screen">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>400</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1600</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+    </font>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="openAction"/>
+    <addaction name="addAction"/>
+    <addaction name="clearAction"/>
+    <addaction name="saveAction"/>
+    <addaction name="saveBinaryAction"/>
+    <addaction name="exitAction"/>
+   </widget>
+   <widget class="QMenu" name="menuView_2">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="controlAction"/>
+    <addaction name="pointCloudDataAction"/>
+    <addaction name="imageTrackerDataAction"/>
+    <addaction name="consoleAction"/>
+   </widget>
+   <widget class="QMenu" name="menuConnect">
+    <property name="title">
+     <string>Connect</string>
+    </property>
+    <addaction name="bluetoothAction"/>
+    <addaction name="DLModuleAction"/>
+    <addaction name="trackerModuleAction"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView_2"/>
+   <addaction name="menuConnect"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="openAction"/>
+   <addaction name="addAction"/>
+   <addaction name="clearAction"/>
+   <addaction name="saveAction"/>
+   <addaction name="saveBinaryAction"/>
+   <addaction name="separator"/>
+   <addaction name="bluetoothAction"/>
+   <addaction name="DLModuleAction"/>
+   <addaction name="trackerModuleAction"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="controlDock">
+   <property name="minimumSize">
+    <size>
+     <width>439</width>
+     <height>430</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>Control</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="imageLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="trackerLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>27</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::WinPanel</enum>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="curvatureLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Curvature</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="curvatureLCD">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>10</height>
+            </size>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+           <property name="smallDecimalPoint">
+            <bool>false</bool>
+           </property>
+           <property name="digitCount">
+            <number>6</number>
+           </property>
+           <property name="segmentStyle">
+            <enum>QLCDNumber::Filled</enum>
+           </property>
+           <property name="value" stdset="0">
+            <double>0.000000000000000</double>
+           </property>
+           <property name="intValue" stdset="0">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>±</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="errorLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="imageIdxLabel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Airway Index</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="imageIdxLCD">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>10</height>
+            </size>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+           <property name="smallDecimalPoint">
+            <bool>false</bool>
+           </property>
+           <property name="digitCount">
+            <number>1</number>
+           </property>
+           <property name="mode">
+            <enum>QLCDNumber::Dec</enum>
+           </property>
+           <property name="segmentStyle">
+            <enum>QLCDNumber::Filled</enum>
+           </property>
+           <property name="value" stdset="0">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="intValue" stdset="0">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QSlider" name="imageIdxSlider">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>5</number>
+         </property>
+         <property name="singleStep">
+          <number>1</number>
+         </property>
+         <property name="pageStep">
+          <number>1</number>
+         </property>
+         <property name="value">
+          <number>1</number>
+         </property>
+         <property name="sliderPosition">
+          <number>1</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QPushButton" name="DLDrawBtn">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Deep Learning Draw</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="drawBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Manual Draw</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="calibrationBtn">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Calibration</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="saveImageTrackerBtn">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Save Image &amp;&amp; Tracker Info</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QPushButton" name="imageRatioROIBtn">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Ratio Adjust</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ROIMaskBtn">
+           <property name="font">
+            <font>
+             <family>Times New Roman</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Region Adjsut</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="interpolationBtn">
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Create Airway</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="resultsCbx">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Show / Hide Results</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="bgcCbx">
+       <property name="font">
+        <font>
+         <family>Times New Roman</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Switch Background Color</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="pointCloudDataDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>300</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>Point Cloud Data</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_5">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QTreeWidget" name="dataTree">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+       <column>
+        <property name="text">
+         <string>3D Point Cloud</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="imageTrackerDataDock">
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>300</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>Image and Tracker Data</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_8">
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="QTreeWidget" name="imageDataTree">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>微软雅黑</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+       <column>
+        <property name="text">
+         <string>Image File</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="consoleDock">
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>140</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>220</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Console</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_7">
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="QTableWidget" name="consoleTable">
+       <property name="showGrid">
+        <bool>false</bool>
+       </property>
+       <property name="gridStyle">
+        <enum>Qt::SolidLine</enum>
+       </property>
+       <property name="rowCount">
+        <number>0</number>
+       </property>
+       <property name="columnCount">
+        <number>5</number>
+       </property>
+       <attribute name="horizontalHeaderVisible">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>200</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Time</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Operation</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Operation obeject</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Details</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Note</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignLeading|AlignVCenter</set>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="openAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>3D</string>
+   </property>
+   <property name="statusTip">
+    <string>Open a 3D cloud point</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
+   </property>
+  </action>
+  <action name="saveAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="statusTip">
+    <string>Save the 3D cloud point</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="saveasAction">
+   <property name="text">
+    <string>Save as...</string>
+   </property>
+  </action>
+  <action name="exitAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/exit.png</normaloff>:/images/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="pointcolorAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/pointcolor.png</normaloff>:/images/pointcolor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Point cloud color</string>
+   </property>
+  </action>
+  <action name="bgcolorAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/bgcolor.png</normaloff>:/images/bgcolor.png</iconset>
+   </property>
+   <property name="text">
+    <string>Background color</string>
+   </property>
+  </action>
+  <action name="mainviewAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/zhengshi.png</normaloff>:/images/zhengshi.png</iconset>
+   </property>
+   <property name="text">
+    <string>Main view</string>
+   </property>
+  </action>
+  <action name="leftviewAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/zuoshi.png</normaloff>:/images/zuoshi.png</iconset>
+   </property>
+   <property name="text">
+    <string>Left view</string>
+   </property>
+  </action>
+  <action name="topviewAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/fushi.png</normaloff>:/images/fushi.png</iconset>
+   </property>
+   <property name="text">
+    <string>Top view</string>
+   </property>
+  </action>
+  <action name="pointCloudDataAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Point Cloud Data</string>
+   </property>
+  </action>
+  <action name="propertyAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Property Manager</string>
+   </property>
+  </action>
+  <action name="consoleAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Console</string>
+   </property>
+  </action>
+  <action name="controlAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Control</string>
+   </property>
+  </action>
+  <action name="clearAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/clear.png</normaloff>:/images/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear</string>
+   </property>
+   <property name="statusTip">
+    <string>Clear all 3D cloud points</string>
+   </property>
+  </action>
+  <action name="addAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/add.png</normaloff>:/images/add.png</iconset>
+   </property>
+   <property name="text">
+    <string>2D</string>
+   </property>
+   <property name="statusTip">
+    <string>Open a 2D image &amp; tracker info</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="sphereAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/sphere.png</normaloff>:/images/sphere.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sphere</string>
+   </property>
+  </action>
+  <action name="cylinderAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/cylinder.png</normaloff>:/images/cylinder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cylinder</string>
+   </property>
+  </action>
+  <action name="meshsurfaceAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/mesh.png</normaloff>:/images/mesh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Surface</string>
+   </property>
+  </action>
+  <action name="wireframeAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/frame.png</normaloff>:/images/frame.png</iconset>
+   </property>
+   <property name="text">
+    <string>Wireframe</string>
+   </property>
+  </action>
+  <action name="windowsThemeAction">
+   <property name="text">
+    <string>Windows</string>
+   </property>
+  </action>
+  <action name="darculaThemeAction">
+   <property name="text">
+    <string>Darcula</string>
+   </property>
+  </action>
+  <action name="englishAction">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="chineseAction">
+   <property name="text">
+    <string>Chinese</string>
+   </property>
+  </action>
+  <action name="saveBinaryAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/saveBinary.png</normaloff>:/images/saveBinary.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save as binary</string>
+   </property>
+   <property name="statusTip">
+    <string>Save point cloud as binary file</string>
+   </property>
+  </action>
+  <action name="bluetoothAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/bluetooth.png</normaloff>:/images/bluetooth.png</iconset>
+   </property>
+   <property name="text">
+    <string>Bluetooth</string>
+   </property>
+   <property name="statusTip">
+    <string>Open bluetooth configure</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="DLModuleAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/TCP.png</normaloff>:/images/TCP.png</iconset>
+   </property>
+   <property name="text">
+    <string>Deep Learning Module</string>
+   </property>
+   <property name="statusTip">
+    <string>Start Deep Learning Module</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="imageTrackerDataAction">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Image and Tracker Data</string>
+   </property>
+  </action>
+  <action name="trackerModuleAction">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/images/tracker.png</normaloff>:/images/tracker.png</iconset>
+   </property>
+   <property name="text">
+    <string>Tracker Module</string>
+   </property>
+   <property name="statusTip">
+    <string>Start tracker module</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
